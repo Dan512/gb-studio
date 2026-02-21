@@ -2255,44 +2255,6 @@
       ]
     },
     {
-      "key": "adv_pull_delay_frames",
-      "sceneType": "ADVENTURE",
-      "label": "FIELD_PULL_DELAY_FRAMES",
-      "description": "FIELD_PULL_DELAY_FRAMES_DESC",
-      "group": "GAMETYPE_ADVENTURE",
-      "type": "slider",
-      "cType": "UBYTE",
-      "defaultValue": 5,
-      "min": 0,
-      "max": 60,
-      "indent": 1,
-      "conditions": [
-        {
-          "key": "FEAT_ADVENTURE_PULL",
-          "truthy": true
-        }
-      ]
-    },
-    {
-      "key": "adv_pull_grace_frames",
-      "sceneType": "ADVENTURE",
-      "label": "FIELD_PULL_GRACE_FRAMES",
-      "description": "FIELD_PULL_GRACE_FRAMES_DESC",
-      "group": "GAMETYPE_ADVENTURE",
-      "type": "slider",
-      "cType": "UBYTE",
-      "defaultValue": 4,
-      "min": 0,
-      "max": 30,
-      "indent": 1,
-      "conditions": [
-        {
-          "key": "FEAT_ADVENTURE_PULL",
-          "truthy": true
-        }
-      ]
-    },
-    {
       "key": "FEAT_ADVENTURE_KNOCKBACK",
       "sceneType": "ADVENTURE",
       "label": "FIELD_FEAT_PLATFORM_KNOCKBACK",
