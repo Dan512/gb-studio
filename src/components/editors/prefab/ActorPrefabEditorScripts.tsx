@@ -34,6 +34,8 @@ interface ScriptHandlers {
   start: ScriptHandler;
   interact: ScriptHandler;
   update: ScriptHandler;
+  pushed: ScriptHandler;
+  pulled: ScriptHandler;
   hit: {
     hitPlayer: ScriptHandler;
     hit1: ScriptHandler;
@@ -52,14 +54,23 @@ type ActorScriptKey =
 
 type DefaultTab = "interact" | "start" | "update";
 type CollisionTab = "hit" | "start" | "update";
+type PushableTab = "pushed" | "start" | "update";
+type PullableTab = "pulled" | "start" | "update";
+type PushPullTab = "pushed" | "pulled" | "start" | "update";
 type HitTab = "hitPlayer" | "hit1" | "hit2" | "hit3";
 
 const getScriptKey = (
-  primaryTab: DefaultTab | CollisionTab,
+  primaryTab: DefaultTab | CollisionTab | PushableTab | PullableTab | PushPullTab,
   secondaryTab: HitTab,
 ): ActorScriptKey => {
   if (primaryTab === "interact") {
     return "script";
+  }
+  if (primaryTab === "pushed") {
+    return "hit1Script";
+  }
+  if (primaryTab === "pulled") {
+    return "hit2Script";
   }
   if (primaryTab === "start") {
     return "startScript";
@@ -122,9 +133,53 @@ export const ActorPrefabEditorScripts: FC<ActorPrefabEditorScriptsProps> = ({
     [],
   );
 
-  const tabs = Object.keys(
-    prefab?.collisionGroup ? collisionTabs : defaultTabs,
+  const pushableTabs: Record<PushableTab, string> = useMemo(
+    () => ({
+      pushed: l10n("SIDEBAR_ON_PUSHED"),
+      start: l10n("SIDEBAR_ON_INIT"),
+      update: l10n("SIDEBAR_ON_UPDATE"),
+    }),
+    [],
   );
+
+  const pullableTabs: Record<PullableTab, string> = useMemo(
+    () => ({
+      pulled: l10n("SIDEBAR_ON_PULLED"),
+      start: l10n("SIDEBAR_ON_INIT"),
+      update: l10n("SIDEBAR_ON_UPDATE"),
+    }),
+    [],
+  );
+
+  const pushPullTabs: Record<PushPullTab, string> = useMemo(
+    () => ({
+      pushed: l10n("SIDEBAR_ON_PUSHED"),
+      pulled: l10n("SIDEBAR_ON_PULLED"),
+      start: l10n("SIDEBAR_ON_INIT"),
+      update: l10n("SIDEBAR_ON_UPDATE"),
+    }),
+    [],
+  );
+
+  const isPushable =
+    prefab?.collisionExtraFlags?.includes("pushable") &&
+    prefab?.collisionExtraFlags?.includes("solid");
+
+  const isPullable =
+    prefab?.collisionExtraFlags?.includes("pullable") &&
+    prefab?.collisionExtraFlags?.includes("solid");
+
+  const activeTabs = (isPushable && isPullable)
+    ? pushPullTabs
+    : isPushable
+      ? pushableTabs
+      : isPullable
+        ? pullableTabs
+        : prefab?.collisionGroup
+          ? collisionTabs
+          : defaultTabs;
+
+  const tabs = Object.keys(activeTabs);
   const secondaryTabs = Object.keys(hitTabs);
   const lastScriptTab = useAppSelector((state) => state.editor.lastScriptTab);
   const lastScriptTabSecondary = useAppSelector(
@@ -143,15 +198,13 @@ export const ActorPrefabEditorScripts: FC<ActorPrefabEditorScriptsProps> = ({
   >(initialSecondaryTab as keyof ScriptHandlers["hit"]);
 
   // Make sure currently selected script tab is availble
-  // when collision group is modified otherwise use first available tab
+  // when collision group or pushable/pullable is modified otherwise use first available tab
   useEffect(() => {
-    const tabs = Object.keys(
-      prefab?.collisionGroup ? collisionTabs : defaultTabs,
-    );
+    const tabs = Object.keys(activeTabs);
     if (!tabs.includes(scriptMode)) {
       setScriptMode(tabs[0] as keyof ScriptHandlers);
     }
-  }, [scriptMode, prefab?.collisionGroup, collisionTabs, defaultTabs]);
+  }, [scriptMode, activeTabs]);
 
   const dispatch = useAppDispatch();
 

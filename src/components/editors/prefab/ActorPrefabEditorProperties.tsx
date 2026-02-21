@@ -67,9 +67,17 @@ export const ActorPrefabEditorProperties: FC<
     [onChangeActorPrefabProp],
   );
 
+  const isPushableOrPullable =
+    (prefab?.collisionExtraFlags?.includes("pushable") ||
+     prefab?.collisionExtraFlags?.includes("pullable")) &&
+    prefab?.collisionExtraFlags?.includes("solid");
+
   const onChangeCollisionGroup = useCallback(
-    (e: CollisionGroup) => onChangeActorPrefabProp("collisionGroup", e),
-    [onChangeActorPrefabProp],
+    (e: CollisionGroup) => {
+      if (isPushableOrPullable && e !== "") return;
+      onChangeActorPrefabProp("collisionGroup", e);
+    },
+    [onChangeActorPrefabProp, isPushableOrPullable],
   );
 
   const onlyCurrentSpriteMode = useCallback(

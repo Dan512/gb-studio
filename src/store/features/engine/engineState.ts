@@ -54,6 +54,7 @@ export type ExtraActorCollisionFlagDef = {
   description?: string;
   setFlag: CollisionExtraFlag;
   clearFlags?: CollisionExtraFlag[];
+  conditions?: { key: string; truthy: boolean }[];
 };
 
 export type SceneTypeSchema = {

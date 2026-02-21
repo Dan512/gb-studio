@@ -11,6 +11,7 @@ import {
 import { sceneSelectors } from "store/features/entities/entitiesState";
 import l10n, { L10NKey } from "shared/lib/lang/l10n";
 import { ExtraActorCollisionFlagDef } from "store/features/engine/engineState";
+import { CollisionExtraFlag } from "shared/lib/resources/types";
 
 interface ActorEditorExtraCollisionFlagsProps {
   actor: ActorNormalized;
@@ -57,11 +58,22 @@ export const ActorEditorExtraCollisionFlags: FC<
     return <></>;
   }
 
+  // Filter flags based on conditions (e.g. pushable requires solid to be set)
+  const visibleFlags = extraActorCollisionFlags.filter((flagDef) => {
+    if (!flagDef.conditions) return true;
+    return flagDef.conditions.every((cond) => {
+      const isSet = actor.collisionExtraFlags.includes(
+        cond.key as CollisionExtraFlag,
+      );
+      return cond.truthy ? isSet : !isSet;
+    });
+  });
+
   return Array.from({
-    length: Math.ceil(extraActorCollisionFlags.length / 2),
+    length: Math.ceil(visibleFlags.length / 2),
   }).map((_, rowIndex) => {
     const startIndex = rowIndex * 2;
-    const items = extraActorCollisionFlags.slice(startIndex, startIndex + 2);
+    const items = visibleFlags.slice(startIndex, startIndex + 2);
 
     return (
       <FormRow key={rowIndex}>
@@ -77,16 +89,24 @@ export const ActorEditorExtraCollisionFlags: FC<
             }
             checked={actor.collisionExtraFlags.includes(flagDef.setFlag)}
             onChange={() => {
-              onChangeActorProp(
-                "collisionExtraFlags",
-                removeArrayElements(
-                  toggleArrayElement(
-                    actor.collisionExtraFlags,
-                    flagDef.setFlag,
-                  ),
-                  flagDef.clearFlags ?? [],
+              const newFlags = removeArrayElements(
+                toggleArrayElement(
+                  actor.collisionExtraFlags,
+                  flagDef.setFlag,
                 ),
+                flagDef.clearFlags ?? [],
               );
+              onChangeActorProp("collisionExtraFlags", newFlags);
+              // Pushable/pullable actors must not have a collision group set,
+              // otherwise the collision group handler takes priority
+              // and the pushed/pulled script never fires.
+              if (
+                (flagDef.setFlag === "pushable" || flagDef.setFlag === "pullable") &&
+                newFlags.includes(flagDef.setFlag as CollisionExtraFlag) &&
+                actor.collisionGroup
+              ) {
+                onChangeActorProp("collisionGroup", "");
+              }
             }}
           />
         ))}

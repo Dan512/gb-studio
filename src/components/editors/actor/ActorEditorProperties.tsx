@@ -65,9 +65,18 @@ export const ActorEditorProperties: FC<ActorEditorPropertiesProps> = ({
     [onChangeActorProp],
   );
 
+  const isPushableOrPullable =
+    (actor?.collisionExtraFlags?.includes("pushable") ||
+     actor?.collisionExtraFlags?.includes("pullable")) &&
+    actor?.collisionExtraFlags?.includes("solid");
+
   const onChangeCollisionGroup = useCallback(
-    (e: CollisionGroup) => onChangeActorProp("collisionGroup", e),
-    [onChangeActorProp],
+    (e: CollisionGroup) => {
+      // Pushable/pullable actors must not have a collision group set
+      if (isPushableOrPullable && e !== "") return;
+      onChangeActorProp("collisionGroup", e);
+    },
+    [onChangeActorProp, isPushableOrPullable],
   );
 
   const onlyCurrentSpriteMode = useCallback(

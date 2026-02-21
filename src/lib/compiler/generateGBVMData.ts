@@ -232,6 +232,12 @@ export const toASMCollisionGroup = (
         if (group === "platform") {
           return "COLLISION_GROUP_FLAG_PLATFORM";
         }
+        if (group === "pushable") {
+          return "COLLISION_GROUP_FLAG_PUSHABLE";
+        }
+        if (group === "pullable") {
+          return "COLLISION_GROUP_FLAG_PULLABLE";
+        }
         return "";
       })
       .filter((group) => group !== "")

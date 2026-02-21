@@ -1764,7 +1764,7 @@ const compile = async (
           );
         }),
         actors: scene.actors.map((entity, entityIndex) => {
-          if (!entity.collisionGroup) {
+          if (!entity.collisionGroup && !entity.collisionExtraFlags?.includes("pushable") && !entity.collisionExtraFlags?.includes("pullable")) {
             return compileScript(
               entity.script,
               "actor",

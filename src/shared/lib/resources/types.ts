@@ -58,6 +58,8 @@ export const CollisionExtraFlag = Type.Union(
     Type.Literal("4"),
     Type.Literal("solid"),
     Type.Literal("platform"),
+    Type.Literal("pushable"),
+    Type.Literal("pullable"),
   ],
   { default: "" },
 );

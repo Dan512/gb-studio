@@ -9,10 +9,22 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "togglebuttons",
       "options": [
-        ["INPUT_A", "A"],
-        ["INPUT_B", "B"],
-        ["INPUT_UP", "FIELD_DIRECTION_UP"],
-        ["INPUT_DOWN", "FIELD_DIRECTION_DOWN"]
+        [
+          "INPUT_A",
+          "A"
+        ],
+        [
+          "INPUT_B",
+          "B"
+        ],
+        [
+          "INPUT_UP",
+          "FIELD_DIRECTION_UP"
+        ],
+        [
+          "INPUT_DOWN",
+          "FIELD_DIRECTION_DOWN"
+        ]
       ],
       "cType": "define",
       "defaultValue": "INPUT_A"
@@ -25,10 +37,22 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "togglebuttons",
       "options": [
-        ["FALSE", "FIELD_NONE"],
-        ["INPUT_A_PRESSED", "A"],
-        ["INPUT_B_PRESSED", "B"],
-        ["INPUT_UP_PRESSED", "FIELD_DIRECTION_UP"]
+        [
+          "FALSE",
+          "FIELD_NONE"
+        ],
+        [
+          "INPUT_A_PRESSED",
+          "A"
+        ],
+        [
+          "INPUT_B_PRESSED",
+          "B"
+        ],
+        [
+          "INPUT_UP_PRESSED",
+          "FIELD_DIRECTION_UP"
+        ]
       ],
       "cType": "define",
       "defaultValue": "INPUT_UP_PRESSED"
@@ -98,7 +122,6 @@
       "max": 768,
       "editUnits": "subpxVelPrecise"
     },
-
     {
       "key": "plat_grav",
       "sceneType": "PLATFORM",
@@ -112,7 +135,6 @@
       "max": 8192,
       "editUnits": "subpxAccPrecise"
     },
-
     {
       "key": "plat_max_fall_vel",
       "sceneType": "PLATFORM",
@@ -177,10 +199,22 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "select",
       "options": [
-        ["PLATFORM_CAMERA_LOCK_SCREEN_NONE", "FIELD_NONE"],
-        ["PLATFORM_CAMERA_LOCK_SCREEN_LEFT", "FIELD_LEFT"],
-        ["PLATFORM_CAMERA_LOCK_SCREEN_RIGHT", "FIELD_RIGHT"],
-        ["PLATFORM_CAMERA_LOCK_SCREEN_BOTH", "FIELD_BOTH"]
+        [
+          "PLATFORM_CAMERA_LOCK_SCREEN_NONE",
+          "FIELD_NONE"
+        ],
+        [
+          "PLATFORM_CAMERA_LOCK_SCREEN_LEFT",
+          "FIELD_LEFT"
+        ],
+        [
+          "PLATFORM_CAMERA_LOCK_SCREEN_RIGHT",
+          "FIELD_RIGHT"
+        ],
+        [
+          "PLATFORM_CAMERA_LOCK_SCREEN_BOTH",
+          "FIELD_BOTH"
+        ]
       ],
       "cType": "UBYTE",
       "defaultValue": "PLATFORM_CAMERA_LOCK_SCREEN_NONE"
@@ -221,8 +255,14 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "togglebuttons",
       "options": [
-        ["INPUT_A", "A"],
-        ["INPUT_B", "B"]
+        [
+          "INPUT_A",
+          "A"
+        ],
+        [
+          "INPUT_B",
+          "B"
+        ]
       ],
       "cType": "define",
       "defaultValue": "INPUT_B",
@@ -242,9 +282,18 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "select",
       "options": [
-        ["RUN_STYLE_DEFAULT", "FIELD_DEFAULT"],
-        ["RUN_STYLE_SMOOTH", "FIELD_RUN_STYLE_SMOOTH"],
-        ["RUN_STYLE_INSTANT", "FIELD_INSTANT"]
+        [
+          "RUN_STYLE_DEFAULT",
+          "FIELD_DEFAULT"
+        ],
+        [
+          "RUN_STYLE_SMOOTH",
+          "FIELD_RUN_STYLE_SMOOTH"
+        ],
+        [
+          "RUN_STYLE_INSTANT",
+          "FIELD_INSTANT"
+        ]
       ],
       "cType": "define",
       "defaultValue": "RUN_STYLE_DEFAULT",
@@ -336,9 +385,18 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "togglebuttons",
       "options": [
-        ["INPUT_A", "A"],
-        ["INPUT_B", "B"],
-        ["INPUT_UP", "FIELD_DIRECTION_UP"]
+        [
+          "INPUT_A",
+          "A"
+        ],
+        [
+          "INPUT_B",
+          "B"
+        ],
+        [
+          "INPUT_UP",
+          "FIELD_DIRECTION_UP"
+        ]
       ],
       "cType": "define",
       "defaultValue": "INPUT_A",
@@ -768,10 +826,22 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "select",
       "options": [
-        ["DROP_THRU_INPUT_DOWN_HOLD", "FIELD_DOWN_HOLD"],
-        ["DROP_THRU_INPUT_DOWN_TAP", "FIELD_DOWN_TAP"],
-        ["DROP_THRU_INPUT_DOWN_JUMP_HOLD", "FIELD_DOWN_AND_JUMP_HOLD"],
-        ["DROP_THRU_INPUT_DOWN_JUMP_TAP", "FIELD_DOWN_AND_JUMP_TAP"]
+        [
+          "DROP_THRU_INPUT_DOWN_HOLD",
+          "FIELD_DOWN_HOLD"
+        ],
+        [
+          "DROP_THRU_INPUT_DOWN_TAP",
+          "FIELD_DOWN_TAP"
+        ],
+        [
+          "DROP_THRU_INPUT_DOWN_JUMP_HOLD",
+          "FIELD_DOWN_AND_JUMP_HOLD"
+        ],
+        [
+          "DROP_THRU_INPUT_DOWN_JUMP_TAP",
+          "FIELD_DOWN_AND_JUMP_TAP"
+        ]
       ],
       "cType": "define",
       "defaultValue": "DROP_THRU_INPUT_DOWN_JUMP_TAP",
@@ -836,8 +906,14 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "select",
       "options": [
-        ["FLOAT_INPUT_HOLD_JUMP", "FIELD_JUMP_HOLD"],
-        ["FLOAT_INPUT_HOLD_UP", "FIELD_UP_HOLD"]
+        [
+          "FLOAT_INPUT_HOLD_JUMP",
+          "FIELD_JUMP_HOLD"
+        ],
+        [
+          "FLOAT_INPUT_HOLD_UP",
+          "FIELD_UP_HOLD"
+        ]
       ],
       "cType": "define",
       "defaultValue": "FLOAT_INPUT_HOLD_JUMP",
@@ -1050,11 +1126,26 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "select",
       "options": [
-        ["DASH_INPUT_INTERACT", "FIELD_INTERACT_TAP"],
-        ["DASH_INPUT_DOUBLE_TAP", "FIELD_DIR_DOUBLE_TAP"],
-        ["DASH_INPUT_DOWN_JUMP", "FIELD_DOWN_AND_JUMP_TAP"],
-        ["DASH_INPUT_A", "A"],
-        ["DASH_INPUT_B", "B"]
+        [
+          "DASH_INPUT_INTERACT",
+          "FIELD_INTERACT_TAP"
+        ],
+        [
+          "DASH_INPUT_DOUBLE_TAP",
+          "FIELD_DIR_DOUBLE_TAP"
+        ],
+        [
+          "DASH_INPUT_DOWN_JUMP",
+          "FIELD_DOWN_AND_JUMP_TAP"
+        ],
+        [
+          "DASH_INPUT_A",
+          "A"
+        ],
+        [
+          "DASH_INPUT_B",
+          "B"
+        ]
       ],
       "cType": "define",
       "defaultValue": "DASH_INPUT_DOUBLE_TAP",
@@ -1074,9 +1165,18 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "mask",
       "options": [
-        [1, "FIELD_GROUND"],
-        [2, "FIELD_AIR"],
-        [4, "FIELD_LADDER"]
+        [
+          1,
+          "FIELD_GROUND"
+        ],
+        [
+          2,
+          "FIELD_AIR"
+        ],
+        [
+          4,
+          "FIELD_LADDER"
+        ]
       ],
       "cType": "UBYTE",
       "defaultValue": 3,
@@ -1096,9 +1196,18 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "mask",
       "options": [
-        [-4, "FIELD_ACTORS"],
-        [-8, "FIELD_TRIGGERS"],
-        [-16, "FIELD_WALLS"]
+        [
+          -4,
+          "FIELD_ACTORS"
+        ],
+        [
+          -8,
+          "FIELD_TRIGGERS"
+        ],
+        [
+          -16,
+          "FIELD_WALLS"
+        ]
       ],
       "cType": "UBYTE",
       "defaultValue": 255,
@@ -1195,8 +1304,14 @@
       "group": "GAMETYPE_PLATFORMER",
       "type": "mask",
       "options": [
-        [1, "FIELD_GROUND"],
-        [2, "FIELD_AIR"]
+        [
+          1,
+          "FIELD_GROUND"
+        ],
+        [
+          2,
+          "FIELD_AIR"
+        ]
       ],
       "cType": "UBYTE",
       "defaultValue": 1,
@@ -1474,14 +1589,38 @@
       "type": "select",
       "cType": "UBYTE",
       "options": [
-        ["PLATFORM_FALL_STATE", "FIELD_FALL_STATE"],
-        ["PLATFORM_GROUND_STATE", "FIELD_GROUND_STATE"],
-        ["PLATFORM_JUMP_STATE", "FIELD_JUMP_STATE"],
-        ["PLATFORM_DASH_STATE", "FIELD_DASH_STATE"],
-        ["PLATFORM_LADDER_STATE", "FIELD_LADDER_STATE"],
-        ["PLATFORM_WALL_STATE", "FIELD_WALL_STATE"],
-        ["PLATFORM_KNOCKBACK_STATE", "FIELD_KNOCKBACK_STATE"],
-        ["PLATFORM_BLANK_STATE", "FIELD_BLANK_STATE"]
+        [
+          "PLATFORM_FALL_STATE",
+          "FIELD_FALL_STATE"
+        ],
+        [
+          "PLATFORM_GROUND_STATE",
+          "FIELD_GROUND_STATE"
+        ],
+        [
+          "PLATFORM_JUMP_STATE",
+          "FIELD_JUMP_STATE"
+        ],
+        [
+          "PLATFORM_DASH_STATE",
+          "FIELD_DASH_STATE"
+        ],
+        [
+          "PLATFORM_LADDER_STATE",
+          "FIELD_LADDER_STATE"
+        ],
+        [
+          "PLATFORM_WALL_STATE",
+          "FIELD_WALL_STATE"
+        ],
+        [
+          "PLATFORM_KNOCKBACK_STATE",
+          "FIELD_KNOCKBACK_STATE"
+        ],
+        [
+          "PLATFORM_BLANK_STATE",
+          "FIELD_BLANK_STATE"
+        ]
       ],
       "defaultValue": "PLATFORM_FALL_STATE",
       "runtimeOnly": true
@@ -1494,8 +1633,14 @@
       "group": "GAMETYPE_SHMUP",
       "type": "select",
       "options": [
-        ["MOVEMENT_TYPE_FREE", "FIELD_FREE_MOVEMENT"],
-        ["MOVEMENT_TYPE_LOCK_PERPENDICULAR", "FIELD_LOCKED_MOVEMENT"]
+        [
+          "MOVEMENT_TYPE_FREE",
+          "FIELD_FREE_MOVEMENT"
+        ],
+        [
+          "MOVEMENT_TYPE_LOCK_PERPENDICULAR",
+          "FIELD_LOCKED_MOVEMENT"
+        ]
       ],
       "cType": "define",
       "defaultValue": "MOVEMENT_TYPE_FREE"
@@ -1521,8 +1666,14 @@
       "group": "GAMETYPE_SHMUP",
       "type": "select",
       "options": [
-        ["ON_PLAYER_COLLISION", "FIELD_ON_PLAYER_COLLISION"],
-        ["ON_SCREEN_ENTER", "FIELD_ON_SCREEN_ENTER"]
+        [
+          "ON_PLAYER_COLLISION",
+          "FIELD_ON_PLAYER_COLLISION"
+        ],
+        [
+          "ON_SCREEN_ENTER",
+          "FIELD_ON_SCREEN_ENTER"
+        ]
       ],
       "cType": "define",
       "defaultValue": "ON_PLAYER_COLLISION"
@@ -1535,10 +1686,22 @@
       "group": "GAMETYPE_SHMUP",
       "type": "togglebuttons",
       "options": [
-        ["COLLISION_GROUP_NONE", "FIELD_NONE"],
-        ["COLLISION_GROUP_1", "1"],
-        ["COLLISION_GROUP_2", "2"],
-        ["COLLISION_GROUP_3", "3"]
+        [
+          "COLLISION_GROUP_NONE",
+          "FIELD_NONE"
+        ],
+        [
+          "COLLISION_GROUP_1",
+          "1"
+        ],
+        [
+          "COLLISION_GROUP_2",
+          "2"
+        ],
+        [
+          "COLLISION_GROUP_3",
+          "3"
+        ]
       ],
       "cType": "define",
       "defaultValue": "COLLISION_GROUP_NONE"
@@ -1551,8 +1714,14 @@
       "group": "GAMETYPE_TOP_DOWN",
       "type": "togglebuttons",
       "options": [
-        ["INPUT_A", "A"],
-        ["INPUT_B", "B"]
+        [
+          "INPUT_A",
+          "A"
+        ],
+        [
+          "INPUT_B",
+          "B"
+        ]
       ],
       "cType": "define",
       "defaultValue": "INPUT_A"
@@ -1565,8 +1734,14 @@
       "group": "GAMETYPE_TOP_DOWN",
       "type": "select",
       "options": [
-        [8, "FIELD_GRID_8PX"],
-        [16, "FIELD_GRID_16PX"]
+        [
+          8,
+          "FIELD_GRID_8PX"
+        ],
+        [
+          16,
+          "FIELD_GRID_16PX"
+        ]
       ],
       "cType": "UBYTE",
       "defaultValue": 8
@@ -1578,8 +1753,14 @@
       "group": "SETTINGS_FADE",
       "type": "select",
       "options": [
-        [0, "FIELD_FADE_WHITE"],
-        [1, "FIELD_FADE_BLACK"]
+        [
+          0,
+          "FIELD_FADE_WHITE"
+        ],
+        [
+          1,
+          "FIELD_FADE_BLACK"
+        ]
       ],
       "cType": "UBYTE",
       "defaultValue": 0
@@ -1592,8 +1773,14 @@
       "group": "GAMETYPE_ADVENTURE",
       "type": "togglebuttons",
       "options": [
-        ["INPUT_A", "A"],
-        ["INPUT_B", "B"]
+        [
+          "INPUT_A",
+          "A"
+        ],
+        [
+          "INPUT_B",
+          "B"
+        ]
       ],
       "cType": "define",
       "defaultValue": "INPUT_A"
@@ -1606,8 +1793,14 @@
       "group": "GAMETYPE_ADVENTURE",
       "type": "select",
       "options": [
-        ["MOVE_TYPE_4_WAY", "FIELD_4_WAY"],
-        ["MOVE_TYPE_8_WAY", "FIELD_8_WAY"]
+        [
+          "MOVE_TYPE_4_WAY",
+          "FIELD_4_WAY"
+        ],
+        [
+          "MOVE_TYPE_8_WAY",
+          "FIELD_8_WAY"
+        ]
       ],
       "cType": "define",
       "defaultValue": "MOVE_TYPE_8_WAY"
@@ -1620,8 +1813,14 @@
       "group": "GAMETYPE_ADVENTURE",
       "type": "select",
       "options": [
-        ["DIRECTION_TYPE_4_WAY", "FIELD_4_WAY"],
-        ["DIRECTION_TYPE_HORIZONTAL", "FIELD_HORIZONTAL_ONLY"]
+        [
+          "DIRECTION_TYPE_4_WAY",
+          "FIELD_4_WAY"
+        ],
+        [
+          "DIRECTION_TYPE_HORIZONTAL",
+          "FIELD_HORIZONTAL_ONLY"
+        ]
       ],
       "cType": "define",
       "defaultValue": "DIRECTION_TYPE_4_WAY"
@@ -1714,8 +1913,14 @@
       "group": "GAMETYPE_ADVENTURE",
       "type": "togglebuttons",
       "options": [
-        ["INPUT_A", "A"],
-        ["INPUT_B", "B"]
+        [
+          "INPUT_A",
+          "A"
+        ],
+        [
+          "INPUT_B",
+          "B"
+        ]
       ],
       "cType": "define",
       "defaultValue": "INPUT_B",
@@ -1820,10 +2025,22 @@
       "group": "GAMETYPE_ADVENTURE",
       "type": "select",
       "options": [
-        ["DASH_INPUT_INTERACT", "FIELD_INTERACT_TAP"],
-        ["DASH_INPUT_DOUBLE_TAP", "FIELD_DPAD_DOUBLE_TAP"],
-        ["DASH_INPUT_A", "A"],
-        ["DASH_INPUT_B", "B"]
+        [
+          "DASH_INPUT_INTERACT",
+          "FIELD_INTERACT_TAP"
+        ],
+        [
+          "DASH_INPUT_DOUBLE_TAP",
+          "FIELD_DPAD_DOUBLE_TAP"
+        ],
+        [
+          "DASH_INPUT_A",
+          "A"
+        ],
+        [
+          "DASH_INPUT_B",
+          "B"
+        ]
       ],
       "cType": "define",
       "defaultValue": "DASH_INPUT_DOUBLE_TAP",
@@ -1843,9 +2060,18 @@
       "group": "GAMETYPE_ADVENTURE",
       "type": "mask",
       "options": [
-        [-4, "FIELD_ACTORS"],
-        [-8, "FIELD_TRIGGERS"],
-        [-16, "FIELD_WALLS"]
+        [
+          -4,
+          "FIELD_ACTORS"
+        ],
+        [
+          -8,
+          "FIELD_TRIGGERS"
+        ],
+        [
+          -16,
+          "FIELD_WALLS"
+        ]
       ],
       "cType": "UBYTE",
       "defaultValue": 255,
@@ -1982,6 +2208,91 @@
       ]
     },
     {
+      "key": "adv_push_grace_frames",
+      "sceneType": "ADVENTURE",
+      "label": "FIELD_PUSH_GRACE_FRAMES",
+      "description": "FIELD_PUSH_GRACE_FRAMES_DESC",
+      "group": "GAMETYPE_ADVENTURE",
+      "type": "slider",
+      "cType": "UBYTE",
+      "defaultValue": 4,
+      "min": 0,
+      "max": 30,
+      "indent": 1,
+      "conditions": [
+        {
+          "key": "FEAT_ADVENTURE_PUSH",
+          "truthy": true
+        }
+      ]
+    },
+    {
+      "key": "FEAT_ADVENTURE_PULL",
+      "sceneType": "ADVENTURE",
+      "label": "FIELD_FEAT_PULL",
+      "description": "FIELD_FEAT_PULL_DESC",
+      "group": "GAMETYPE_ADVENTURE",
+      "type": "checkbox",
+      "cType": "define",
+      "isHeading": true,
+      "defaultValue": 0
+    },
+    {
+      "key": "ADVENTURE_PULL_ANIM",
+      "sceneType": "ADVENTURE",
+      "label": "FIELD_PULL_ANIM_STATE",
+      "description": "FIELD_PULL_ANIM_STATE_DESC",
+      "group": "GAMETYPE_ADVENTURE",
+      "type": "animationstate",
+      "cType": "define",
+      "defaultValue": "",
+      "indent": 1,
+      "conditions": [
+        {
+          "key": "FEAT_ADVENTURE_PULL",
+          "truthy": true
+        }
+      ]
+    },
+    {
+      "key": "adv_pull_delay_frames",
+      "sceneType": "ADVENTURE",
+      "label": "FIELD_PULL_DELAY_FRAMES",
+      "description": "FIELD_PULL_DELAY_FRAMES_DESC",
+      "group": "GAMETYPE_ADVENTURE",
+      "type": "slider",
+      "cType": "UBYTE",
+      "defaultValue": 5,
+      "min": 0,
+      "max": 60,
+      "indent": 1,
+      "conditions": [
+        {
+          "key": "FEAT_ADVENTURE_PULL",
+          "truthy": true
+        }
+      ]
+    },
+    {
+      "key": "adv_pull_grace_frames",
+      "sceneType": "ADVENTURE",
+      "label": "FIELD_PULL_GRACE_FRAMES",
+      "description": "FIELD_PULL_GRACE_FRAMES_DESC",
+      "group": "GAMETYPE_ADVENTURE",
+      "type": "slider",
+      "cType": "UBYTE",
+      "defaultValue": 4,
+      "min": 0,
+      "max": 30,
+      "indent": 1,
+      "conditions": [
+        {
+          "key": "FEAT_ADVENTURE_PULL",
+          "truthy": true
+        }
+      ]
+    },
+    {
       "key": "FEAT_ADVENTURE_KNOCKBACK",
       "sceneType": "ADVENTURE",
       "label": "FIELD_FEAT_PLATFORM_KNOCKBACK",
@@ -2105,12 +2416,30 @@
       "type": "select",
       "cType": "UBYTE",
       "options": [
-        ["ADVENTURE_GROUND_STATE", "FIELD_GROUND_STATE"],
-        ["ADVENTURE_DASH_STATE", "FIELD_DASH_STATE"],
-        ["ADVENTURE_KNOCKBACK_STATE", "FIELD_KNOCKBACK_STATE"],
-        ["ADVENTURE_BLANK_STATE", "FIELD_BLANK_STATE"],
-        ["ADVENTURE_RUN_STATE", "FIELD_RUN_STATE"],
-        ["ADVENTURE_PUSH_STATE", "FIELD_PUSH_STATE"]
+        [
+          "ADVENTURE_GROUND_STATE",
+          "FIELD_GROUND_STATE"
+        ],
+        [
+          "ADVENTURE_DASH_STATE",
+          "FIELD_DASH_STATE"
+        ],
+        [
+          "ADVENTURE_KNOCKBACK_STATE",
+          "FIELD_KNOCKBACK_STATE"
+        ],
+        [
+          "ADVENTURE_BLANK_STATE",
+          "FIELD_BLANK_STATE"
+        ],
+        [
+          "ADVENTURE_RUN_STATE",
+          "FIELD_RUN_STATE"
+        ],
+        [
+          "ADVENTURE_PUSH_STATE",
+          "FIELD_PUSH_STATE"
+        ]
       ],
       "defaultValue": "ADVENTURE_GROUND_STATE",
       "runtimeOnly": true
@@ -2200,7 +2529,10 @@
     {
       "key": "TOPDOWN",
       "label": "GAMETYPE_TOP_DOWN",
-      "files": ["include/states/topdown.h", "src/states/topdown.c"],
+      "files": [
+        "include/states/topdown.h",
+        "src/states/topdown.c"
+      ],
       "collisionTiles": [
         {
           "key": "solid",
@@ -2251,21 +2583,28 @@
     {
       "key": "PLATFORM",
       "label": "GAMETYPE_PLATFORMER",
-      "files": ["include/states/platform.h", "src/states/platform.c"],
+      "files": [
+        "include/states/platform.h",
+        "src/states/platform.c"
+      ],
       "extraActorCollisionFlags": [
         {
           "key": "solid",
           "label": "FIELD_IS_SOLID",
           "description": "FIELD_IS_SOLID_DESC",
           "setFlag": "solid",
-          "clearFlags": ["platform"]
+          "clearFlags": [
+            "platform"
+          ]
         },
         {
           "key": "platform",
           "label": "FIELD_IS_PLATFORM",
           "description": "FIELD_IS_PLATFORM_DESC",
           "setFlag": "platform",
-          "clearFlags": ["solid"]
+          "clearFlags": [
+            "solid"
+          ]
         }
       ],
       "collisionTiles": [
@@ -2387,13 +2726,40 @@
     {
       "key": "ADVENTURE",
       "label": "GAMETYPE_ADVENTURE",
-      "files": ["include/states/adventure.h", "src/states/adventure.c"],
+      "files": [
+        "include/states/adventure.h",
+        "src/states/adventure.c"
+      ],
       "extraActorCollisionFlags": [
         {
           "key": "solid",
           "label": "FIELD_IS_SOLID",
           "description": "FIELD_IS_SOLID_DESC",
           "setFlag": "solid"
+        },
+        {
+          "key": "pushable",
+          "label": "FIELD_IS_PUSHABLE",
+          "description": "FIELD_IS_PUSHABLE_DESC",
+          "setFlag": "pushable",
+          "conditions": [
+            {
+              "key": "solid",
+              "truthy": true
+            }
+          ]
+        },
+        {
+          "key": "pullable",
+          "label": "FIELD_IS_PULLABLE",
+          "description": "FIELD_IS_PULLABLE_DESC",
+          "setFlag": "pullable",
+          "conditions": [
+            {
+              "key": "solid",
+              "truthy": true
+            }
+          ]
         }
       ],
       "collisionTiles": [
@@ -2476,13 +2842,16 @@
           "name": "FIELD_COLLISION_SLOPE_BOTTOM_RIGHT",
           "icon": "0F0F1F3FFEFEFCF0",
           "group": "corner"
-        } 
+        }
       ]
     },
     {
       "key": "SHMUP",
       "label": "GAMETYPE_SHMUP",
-      "files": ["include/states/shmup.h", "src/states/shmup.c"],
+      "files": [
+        "include/states/shmup.h",
+        "src/states/shmup.c"
+      ],
       "collisionTiles": [
         {
           "key": "solid",
@@ -2533,7 +2902,10 @@
     {
       "key": "POINTNCLICK",
       "label": "GAMETYPE_POINT_N_CLICK",
-      "files": ["include/states/pointnclick.h", "src/states/pointnclick.c"],
+      "files": [
+        "include/states/pointnclick.h",
+        "src/states/pointnclick.c"
+      ],
       "collisionTiles": [
         {
           "key": "solid",
@@ -2548,7 +2920,10 @@
     {
       "key": "LOGO",
       "label": "GAMETYPE_LOGO",
-      "files": ["include/states/logo.h", "src/states/logo.c"],
+      "files": [
+        "include/states/logo.h",
+        "src/states/logo.c"
+      ],
       "collisionTiles": [
         {
           "key": "solid",

@@ -3897,6 +3897,98 @@ class ScriptBuilder extends ScriptBuilderBase {
     this._addNL();
   };
 
+  ifPushedDirection = (
+    direction: string,
+    holdFrames: number,
+    truePath: ScriptEvent[] | ScriptBuilderPathFunction = [],
+    falsePath: ScriptEvent[] | ScriptBuilderPathFunction = [],
+  ) => {
+    const pushDirRef = this._declareLocal("push_dir_value", 1, true);
+    const pushFramesRef = this._declareLocal("push_frames_value", 1, true);
+    if (!this.includeParams.includes(1)) {
+      this.includeParams.push(1);
+    }
+    if (!this.includeParams.includes(2)) {
+      this.includeParams.push(2);
+    }
+    const trueLabel = this.getNextLabel();
+    const falseLabel = this.getNextLabel();
+    const endLabel = this.getNextLabel();
+    this._addComment(`If Pushed ${direction} for ${holdFrames} frames`);
+    this._getThreadLocal(pushDirRef, 1);
+    this._ifConst(
+      ".NE",
+      pushDirRef,
+      direction === "left"
+        ? ".DIR_LEFT"
+        : direction === "right"
+          ? ".DIR_RIGHT"
+          : direction === "up"
+            ? ".DIR_UP"
+            : ".DIR_DOWN",
+      falseLabel,
+      0,
+    );
+    if (holdFrames > 0) {
+      this._getThreadLocal(pushFramesRef, 2);
+      this._ifConst(".LT", pushFramesRef, holdFrames, falseLabel, 0);
+    }
+    this._jump(trueLabel);
+    this._label(falseLabel);
+    this._compilePath(falsePath);
+    this._jump(endLabel);
+    this._label(trueLabel);
+    this._compilePath(truePath);
+    this._label(endLabel);
+    this._addNL();
+  };
+
+  ifPulledDirection = (
+    direction: string,
+    holdFrames: number,
+    truePath: ScriptEvent[] | ScriptBuilderPathFunction = [],
+    falsePath: ScriptEvent[] | ScriptBuilderPathFunction = [],
+  ) => {
+    const pullDirRef = this._declareLocal("pull_dir_value", 1, true);
+    const pullFramesRef = this._declareLocal("pull_frames_value", 1, true);
+    if (!this.includeParams.includes(1)) {
+      this.includeParams.push(1);
+    }
+    if (!this.includeParams.includes(2)) {
+      this.includeParams.push(2);
+    }
+    const trueLabel = this.getNextLabel();
+    const falseLabel = this.getNextLabel();
+    const endLabel = this.getNextLabel();
+    this._addComment(`If Pulled ${direction} for ${holdFrames} frames`);
+    this._getThreadLocal(pullDirRef, 1);
+    this._ifConst(
+      ".NE",
+      pullDirRef,
+      direction === "left"
+        ? ".DIR_LEFT"
+        : direction === "right"
+          ? ".DIR_RIGHT"
+          : direction === "up"
+            ? ".DIR_UP"
+            : ".DIR_DOWN",
+      falseLabel,
+      0,
+    );
+    if (holdFrames > 0) {
+      this._getThreadLocal(pullFramesRef, 2);
+      this._ifConst(".LT", pullFramesRef, holdFrames, falseLabel, 0);
+    }
+    this._jump(trueLabel);
+    this._label(falseLabel);
+    this._compilePath(falsePath);
+    this._jump(endLabel);
+    this._label(trueLabel);
+    this._compilePath(truePath);
+    this._label(endLabel);
+    this._addNL();
+  };
+
   ifDataSaved = (
     slot = 0,
     truePath: ScriptEvent[] | ScriptBuilderPathFunction = [],

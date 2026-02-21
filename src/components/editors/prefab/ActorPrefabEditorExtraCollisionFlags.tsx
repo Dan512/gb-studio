@@ -10,6 +10,7 @@ import {
 } from "shared/lib/helpers/array";
 import { sceneSelectors } from "store/features/entities/entitiesState";
 import l10n, { L10NKey } from "shared/lib/lang/l10n";
+import { CollisionExtraFlag } from "shared/lib/resources/types";
 import uniqBy from "lodash/uniqBy";
 
 interface ActorPrefabEditorExtraCollisionFlagsProps {
@@ -86,16 +87,22 @@ export const ActorPrefabEditorExtraCollisionFlags: FC<
             }
             checked={prefab.collisionExtraFlags.includes(flagDef.setFlag)}
             onChange={() => {
-              onChangeActorPrefabProp(
-                "collisionExtraFlags",
-                removeArrayElements(
-                  toggleArrayElement(
-                    prefab.collisionExtraFlags,
-                    flagDef.setFlag,
-                  ),
-                  flagDef.clearFlags ?? [],
+              const newFlags = removeArrayElements(
+                toggleArrayElement(
+                  prefab.collisionExtraFlags,
+                  flagDef.setFlag,
                 ),
+                flagDef.clearFlags ?? [],
               );
+              onChangeActorPrefabProp("collisionExtraFlags", newFlags);
+              // Pushable/pullable actors must not have a collision group set
+              if (
+                (flagDef.setFlag === "pushable" || flagDef.setFlag === "pullable") &&
+                newFlags.includes(flagDef.setFlag as CollisionExtraFlag) &&
+                prefab.collisionGroup
+              ) {
+                onChangeActorPrefabProp("collisionGroup", "");
+              }
             }}
           />
         ))}
